@@ -1,6 +1,4 @@
-from re import search
 from playwright.sync_api import sync_playwright
-
 
 
 def search_coin():
@@ -17,18 +15,11 @@ def search_coin():
             cotation.append(page.locator('xpath=//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]').get_attribute('data-value'))
             for i in cotation:
               quote.update({search: i})
-        # print(quote)
-        # for i in quote:
-        #     print(i, quote[i])
+        print(quote)
+        for i in quote:
+            print(i, quote[i])
         
         return quote
 
 
-
-real = search_coin()
-
-print(real)
-
-rublo = search_coin()
-print(rublo)
-
+search_coin()
